@@ -15,11 +15,9 @@ class AppRunner(
         val savedMember = memberRepository.save(Member("zkdlu", 25))
         print(savedMember)
 
-        val members = memberRepository.findAll()
+        val findMember = memberRepository.findByName("zkdlu")
 
-        for (member in members) {
-            print(member)
-        }
+        print(findMember!!)
     }
 
     fun print(member: Member) {
