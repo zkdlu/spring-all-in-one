@@ -7,14 +7,18 @@ plugins {
     kotlin("jvm") version "1.7.20" apply false
     kotlin("plugin.spring") version "1.7.20" apply false
     kotlin("plugin.jpa") version "1.7.20" apply false
+    kotlin("kapt") version "1.7.20"
 }
 
-
 subprojects {
-    apply(plugin = "org.springframework.boot")
-    apply(plugin = "io.spring.dependency-management")
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-    apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+    apply {
+        plugin("kotlin")
+        plugin("kotlin-kapt")
+        plugin("kotlin-spring")
+
+        plugin("org.springframework.boot")
+        plugin("io.spring.dependency-management")
+    }
 
     group = "com.zkdlu"
     version = "1.0-SNAPSHOT"
