@@ -1,4 +1,4 @@
-package com.zkdlu.data
+package com.zkdlu.data.querydsl
 
 import com.querydsl.jpa.impl.JPAQueryFactory
 import com.zkdlu.data.QMember.member

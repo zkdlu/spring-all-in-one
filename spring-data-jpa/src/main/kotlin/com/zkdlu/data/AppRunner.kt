@@ -1,8 +1,8 @@
-package com.zkdlu
+package com.zkdlu.data
 
-import com.zkdlu.data.Member
-import com.zkdlu.data.MemberRepository
-import com.zkdlu.data.Order
+import com.zkdlu.data.jpa.Member
+import com.zkdlu.data.jpa.MemberRepository
+import com.zkdlu.data.jpa.Order
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component

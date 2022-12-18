@@ -1,11 +1,11 @@
-package com.zkdlu
+package com.zkdlu.data
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class QuerydslApplication
+class JpaApplication
 
 fun main(args: Array<String>) {
-    runApplication<QuerydslApplication>(*args)
+    runApplication<JpaApplication>(*args)
 }

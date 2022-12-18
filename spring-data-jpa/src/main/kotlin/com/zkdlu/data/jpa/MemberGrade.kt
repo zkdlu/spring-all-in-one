@@ -1,4 +1,4 @@
-package com.zkdlu.data
+package com.zkdlu.data.jpa
 
 enum class MemberGrade {
     DEFAULT,

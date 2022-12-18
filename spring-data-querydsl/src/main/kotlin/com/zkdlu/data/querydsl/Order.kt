@@ -1,4 +1,4 @@
-package com.zkdlu.data
+package com.zkdlu.data.querydsl
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

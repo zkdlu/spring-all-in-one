@@ -1,7 +1,7 @@
-package com.zkdlu
+package com.zkdlu.data
 
-import com.zkdlu.data.MemberGrade
-import com.zkdlu.data.MemberQuerydslRepository
+import com.zkdlu.data.querydsl.MemberGrade
+import com.zkdlu.data.querydsl.MemberQuerydslRepository
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component
