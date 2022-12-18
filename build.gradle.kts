@@ -6,6 +6,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.15.RELEASE" apply false
     kotlin("jvm") version "1.7.20" apply false
     kotlin("plugin.spring") version "1.7.20" apply false
+    kotlin("plugin.jpa") version "1.7.20" apply false
 }
 
 
@@ -23,7 +24,7 @@ subprojects {
     }
 
     dependencies {
-        implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("org.springframework.boot:spring-boot-starter")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
