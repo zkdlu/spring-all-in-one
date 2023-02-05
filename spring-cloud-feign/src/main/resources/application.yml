@@ -1,0 +1,5 @@
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 1000
