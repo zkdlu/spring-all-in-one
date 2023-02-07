@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping
 
 
 @Component
-@FeignClient(name = "target", url = "http://localhost:8080/")
+@FeignClient(name = "target", url = "http://localhost:8080/", fallback = FallbackTargetClient::class)
 interface TargetClient {
 
     @GetMapping("/demo")

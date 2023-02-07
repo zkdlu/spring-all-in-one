@@ -19,7 +19,7 @@ class TargetApi {
     @GetMapping("/read-timeout")
     fun getReadTimeout(): String {
 
-        Thread.sleep(3000)
+        Thread.sleep(2000)
 
         return "Read Timeout"
     }

@@ -1,5 +1,8 @@
 feign:
+  circuitbreaker:
+    enabled: true
   client:
     config:
       default:
+        loggerLevel: FULL
         readTimeout: 1000
