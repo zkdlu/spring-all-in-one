@@ -16,4 +16,8 @@ class FallbackTargetClient: TargetClient {
         return "Fallback ReadTimeout"
     }
 
+    override fun getOtherTarget(): Other {
+        return Other(0)
+    }
+
 }

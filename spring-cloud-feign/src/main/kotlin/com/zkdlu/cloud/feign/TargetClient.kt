@@ -17,4 +17,7 @@ interface TargetClient {
 
     @GetMapping("/read-timeout")
     fun getReadTimeout(): String
+
+    @GetMapping("/target")
+    fun getOtherTarget(): Other
 }

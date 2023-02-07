@@ -31,12 +31,9 @@ class FeignServiceTest @Autowired constructor(
     }
 
     @Test
-    fun Connect_타임아웃() {
-        TODO("Not yet implemented")
-    }
-
-    @Test
     fun 반환모델_변경() {
-        TODO("Not yet implemented")
+        val otherTarget = feignService.getOtherTarget()
+
+        assertThat(otherTarget).isEqualTo(Other(0))
     }
 }

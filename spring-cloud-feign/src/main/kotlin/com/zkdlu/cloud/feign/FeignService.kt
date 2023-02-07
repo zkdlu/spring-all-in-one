@@ -17,4 +17,8 @@ class FeignService(
     fun getReadTimeout(): String {
         return targetClient.getReadTimeout()
     }
+
+    fun getOtherTarget(): Other {
+        return targetClient.getOtherTarget()
+    }
 }

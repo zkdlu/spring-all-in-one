@@ -28,3 +28,7 @@ class TargetApi {
 data class Target(
     val name: String,
 );
+
+data class Other(
+    val num: Int,
+)
