@@ -9,3 +9,10 @@ resilience4j:
     instances:
       myCircuitBreaker:
         baseConfig: default
+  retry:
+    instances:
+      myRetry:
+        maxRetryAttempts: 2
+        waitDuration: 2s
+        retryExceptions:
+          - java.lang.IllegalStateException
