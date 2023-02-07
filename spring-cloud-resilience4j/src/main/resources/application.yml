@@ -1,0 +1,11 @@
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        minimumNumberOfCalls: 2
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+    instances:
+      myCircuitBreaker:
+        baseConfig: default
