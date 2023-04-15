@@ -22,3 +22,8 @@ resilience4j:
         limitForPeriod: 3 # cycle 동안 호출할 수 있는 횟수
         limitRefreshPeriod: 3s # cycle 주기
         timeoutDuration: 1s # 호출 thread가 rateLimit에 대해 접근 허가를 얻기 위해서 대기하는 시간
+  bulkhead:
+    instances:
+      bulkheadService:
+        maxConcurrentCalls: 5 # 동시에 호출할 수 있는 최대 요청
+        maxWaitDuration: 5000 # maxConcurrentCalls를 모두 사용하고 있을 때 대기할 수 있는 시간
