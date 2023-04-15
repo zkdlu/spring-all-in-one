@@ -16,3 +16,9 @@ resilience4j:
         waitDuration: 2s
         retryExceptions:
           - java.lang.IllegalStateException
+  ratelimiter:
+    configs:
+      default:
+        limitForPeriod: 3 # cycle 동안 호출할 수 있는 횟수
+        limitRefreshPeriod: 3s # cycle 주기
+        timeoutDuration: 1s # 호출 thread가 rateLimit에 대해 접근 허가를 얻기 위해서 대기하는 시간
