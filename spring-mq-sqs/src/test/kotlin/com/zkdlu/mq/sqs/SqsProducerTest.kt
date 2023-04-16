@@ -12,5 +12,7 @@ class SqsProducerTest (
     @Test
     fun producerTest() {
         sqsProducer.sendMessage("안녕하세용")
+
+        Thread.sleep(3000)
     }
 }
