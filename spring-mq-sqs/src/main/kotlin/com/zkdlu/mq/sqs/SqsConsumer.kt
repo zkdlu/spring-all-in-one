@@ -22,6 +22,12 @@ class SqsConsumer(
 ) {
 
     fun doSomething(message: SqsMessage, ack: Acknowledgment) {
+        eventRepository.findByHeaderId(message.headers.id)?.let {
+            println("Duplicated ${message.headers.id}")
+            ack.acknowledge()
+            return
+        }
+
         eventRepository.save(
             Event(
                 message.payload.content,
@@ -32,7 +38,8 @@ class SqsConsumer(
 
         TransactionSynchronizationManager.registerSynchronization(object : TransactionSynchronization {
             override fun afterCommit() {
-                ack.acknowledge()
+                if (message.payload.content != "world")
+                    ack.acknowledge()
             }
         })
 

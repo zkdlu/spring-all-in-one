@@ -44,6 +44,7 @@ class SqsConfig {
         factory.setAmazonSqs(amazonSQSAsync())
         factory.setMaxNumberOfMessages(5)
         factory.setWaitTimeOut(5)
+        factory.setVisibilityTimeout(5)
         return factory
     }
 }
