@@ -7,4 +7,5 @@ include(
     "spring-data-redis",
     "spring-cloud-feign",
     "spring-cloud-resilience4j",
+    "spring-mq-sqs",
 )

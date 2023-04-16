@@ -181,3 +181,4 @@ hs_err_pid*
 replay_pid*
 
 /.idea/
+/spring-mq-sqs/src/main/resources/application.yml
