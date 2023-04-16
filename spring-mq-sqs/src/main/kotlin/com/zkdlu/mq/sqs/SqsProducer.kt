@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicLong
 @Service
 class SqsProducer(
     val queueMessagingTemplate: QueueMessagingTemplate,
+    @Value("\${cloud.aws.sqs.fifo-queue.name}") val fifoName: String,
 ) {
     private val counter: AtomicLong = AtomicLong()
 
@@ -20,5 +21,17 @@ class SqsProducer(
         val sqsMessage = SqsPayload(message, counter.getAndIncrement())
         val newMessage = MessageBuilder.withPayload(sqsMessage).build()
         queueMessagingTemplate.convertAndSend(queueName, newMessage)
+    }
+
+    fun sendFifoMessage(message: String, groupId: String, duplicationId: String) {
+        val headers = mapOf(
+            "message-group-id" to groupId,
+            "message-deduplication-id" to duplicationId
+        )
+
+        val sqsMessage = SqsPayload("FIFO-$message", counter.getAndIncrement())
+        val newMessage = MessageBuilder.withPayload(sqsMessage)
+            .build()
+        queueMessagingTemplate.convertAndSend(fifoName, newMessage, headers)
     }
 }

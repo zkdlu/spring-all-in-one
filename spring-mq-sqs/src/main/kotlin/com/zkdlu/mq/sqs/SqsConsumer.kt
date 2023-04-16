@@ -50,4 +50,10 @@ class SqsConsumer(
     fun listen(@Payload message: SqsMessage, @Headers headers: Map<String, String>, ack: Acknowledgment) {
         doSomething(message, ack)
     }
+
+    @Transactional
+    @SqsListener(value = ["\${cloud.aws.sqs.fifo-queue.name}"], deletionPolicy = SqsMessageDeletionPolicy.NEVER)
+    fun listenFifo(@Payload message: SqsMessage, @Headers headers: Map<String, String>, ack: Acknowledgment) {
+        doSomething(message, ack)
+    }
 }
