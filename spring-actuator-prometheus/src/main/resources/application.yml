@@ -1,8 +1,22 @@
 server:
   port: 8081
 
+spring:
+  application:
+    name: info-test
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  info:
+    env:
+      enabled: true
+
+
+info:
+  hello:
+    world: haha
+  application:
+    name: ${spring.application.name}
