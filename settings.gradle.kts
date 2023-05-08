@@ -8,5 +8,6 @@ include(
     "spring-cloud-feign",
     "spring-cloud-resilience4j",
     "spring-mq-sqs",
+    "spring-logging",
     "spring-actuator-prometheus",
 )
