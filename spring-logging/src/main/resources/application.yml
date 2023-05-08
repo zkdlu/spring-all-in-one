@@ -7,7 +7,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: 'create'
-    show-sql: true
   h2:
     console:
       enabled: true
+
+logging:
+  level:
+    com.zkdlu.logging: TRACE
+    org.hibernate.engine.transaction.internal: TRACE
